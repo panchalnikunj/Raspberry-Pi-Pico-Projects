@@ -26,5 +26,3 @@ while True:
     lcd.putstr('Humi :')
     lcd.move_to(7,1)
     lcd.putstr(str(h)+" %")
-    
-    
