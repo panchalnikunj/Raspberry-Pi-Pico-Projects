@@ -9,10 +9,10 @@ lcd = I2cLcd(i2c_lcd, 0x27, 2, 16)
 
 i2c_rtc = I2C(0,scl = Pin(1),sda = Pin(0),freq = 400000)
 result = I2C.scan(i2c_rtc)
-clockObject = DS1307(i2c_rtc)
+rtc = DS1307(i2c_rtc)
 
 while True:
-    (year,month,date,day,hour,minute,second,p1)=clockObject.datetime()
+    (year,month,date,day,hour,minute,second,p1)=rtc.datetime()
     lcd.clear()
     lcd.move_to(0,0)
     lcd.putstr("Time:")
